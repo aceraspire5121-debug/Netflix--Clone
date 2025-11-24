@@ -1,0 +1,775 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    /*it takes 100 percentage width of the parent(here body is parent of it) so it takes 100 percent of body when laptop then also fully cover,when mobile then also fully cover since body becomes small in mobile but my main will take 100% of body*/
+    height: 93vh;
+    background-image: url(assets/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*Image will stretch/shrink to cover entire div while keeping its aspect ratio.*/
+    background-position: center;
+    position: relative;
+}
+
+nav {
+    width: 82%;
+    /*Take always 82 percent width of your parent(here its parent is main) so when main becomes small it will take 82 percent of that small main and main is adapting wil the body consequently nav is adapting with the main hence nav adapting with the body also*/
+    height: 80px;
+    margin: auto;
+    padding: 0 7px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+nav img.logon {
+    /*if you write img logon then it searches a tag logon inside img, but img.logon it searches img with class logon*/
+
+    width: clamp(80px, 15vw, 160px);
+    /* min 80px, scale up to 15vw, max 160px */
+    height: auto;
+
+}
+
+.m {
+    display: flex;
+    gap: 12px;
+}
+
+button.b {
+    height: clamp(28px, 5vh, 33px);
+    /* min 28px, scale up to 6% of screen height, max 40px */
+    width: clamp(90px, 11vw, 140px);
+    /* min 90px, scales with viewport, max 140px */
+
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.7);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(12px, 1vw, 16px);
+    /* min 12px, scales with viewport, max 16px */
+    font-weight: 500;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    /* space between text & icons */
+}
+
+.c {
+    height: clamp(28px, 5vh, 33px);
+    /* same as language box for consistency */
+    width: clamp(80px, 5vw, 120px);
+    /* min 80px, scales, max 120px */
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px 10px;
+    /* slightly less padding */
+    border-radius: 4px;
+    border: none;
+    background: #e50914;
+    /* Netflix red */
+    color: white;
+
+    font-size: clamp(12px, 1vw, 16px);
+    /* responsive font */
+    font-weight: 500;
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0.69;
+    background-color: black;
+}
+
+.text {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+}
+
+/*
+.text:nth-child(1) → will check if the whole div with class text is the first child of its parent.
+ space dediya to iske first child par property laga do
+ space nhi diya to agar ye first child hai apne parent ka to property laga do
+ > symbol indicate immediate first child not due to preference
+.text :nth-child(1) → will style the first child inside .text. */
+
+.text> :nth-child(1) {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+
+    font-size: clamp(48px, 6vw, 64px);
+    /* min 28px, scales with screen, max 56px */
+    line-height: clamp(44px, 7vw, 80px);
+    /* min 36px, scales, max 70px */
+
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+.text> :nth-child(2) {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: clamp(22px, 3vw, 24px);
+    /* min 14px, scales with screen, max 20px */
+    line-height: clamp(24px, 4vw, 32px);
+    /* min 20px, scales, max 28px */
+
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.text> :nth-child(3) {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: clamp(18px, 2.5vw, 18px);
+    /* min 12px, scale, max 16px */
+    line-height: clamp(20px, 3.5vw, 28px);
+    /* min 18px, scale, max 24px */
+
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.input-design {
+    height: clamp(40px, 7vh, 60px);
+    /* min 40px, scales with screen, max 60px */
+    width: clamp(240px, 40vw, 360px);
+    /* min 240px, scales, max 500px */
+
+    padding: 0 16px;
+    /* inner spacing */
+    border-radius: 4px;
+    /* Netflix uses slightly rounded corners */
+    border: 1px solid rgba(128, 128, 128, 0.7);
+    background: rgba(0, 0, 0, 0.6);
+    /* semi-transparent black */
+    color: white;
+
+    font-size: clamp(14px, 1.2vw, 18px);
+    /* scales text size */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+
+    outline: none;
+    /* remove default outline */
+    position: relative;
+}
+
+.button-design {
+    height: clamp(40px, 7vh, 60px);
+    /* min 40px, scales, max 60px */
+    width: clamp(120px, 20vw, 220px);
+    /* min 120px, scales, max 220px */
+
+    padding: 0 20px;
+    /* inner horizontal padding */
+    border-radius: 4px;
+    border: none;
+    background: #e50914;
+    /* Netflix red */
+    color: white;
+
+    font-size: clamp(14px, 1.2vw, 18px);
+    /* responsive font size */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+
+    display: inline-flex;
+    /* center text nicely */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+
+}
+
+.parent {
+    text-align: center;
+    display: flex;
+    gap: 8px;
+}
+
+@media only screen and (max-width:600px) {
+
+    .main{
+        height: 83vh;
+    }
+
+    nav{
+        width: 90%;
+        height: 80px;
+    }
+    nav .b{
+            height: clamp(28px, 5vh, 35px);
+    /* min 28px, scale up to 6% of screen height, max 40px */
+    width: clamp(97px, 11vw, 140px);
+    /* min 90px, scales with viewport, max 140px */
+    font-size: clamp(13px, 1vw, 16px);
+    }
+
+    nav .c{
+        font-size: clamp(17px, 1vw, 16px);
+    }
+    .parent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .text> :nth-child(1) {
+        font-size: clamp(30px, 7vw, 64px);
+    }
+
+    .input-design {
+        height: clamp(40px, 7vh, 60px);
+        /* min 40px, scales with screen, max 60px */
+        width: clamp(300px, 40vw, 360px);
+        /* min 240px, scales, max 500px */
+    }
+
+    .button-design {
+        height: clamp(40px, 7vh, 60px);
+        /* min 40px, scales, max 60px */
+        width: clamp(150px, 20vw, 220px);
+        /* min 120px, scales, max 220px */
+    }
+
+    .text {
+        width: 84%;
+        height: 89%;
+        display: flex;
+        gap: 25px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+
+    .main{
+        height: 88vh;
+    }
+
+
+      nav{
+        width: 90%;
+        height: 80px;
+    }
+    nav .b{
+            height: clamp(28px, 5vh, 35px);
+    /* min 28px, scale up to 6% of screen height, max 40px */
+    width: clamp(97px, 11vw, 140px);
+    /* min 90px, scales with viewport, max 140px */
+    font-size: clamp(13px, 1vw, 16px);
+    }
+
+    nav .c{
+        font-size: clamp(17px, 1vw, 16px);
+    }
+
+    .text {
+        width: 70%;
+        height: 85%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 43px;
+    }
+
+    .text> :nth-child(1) {
+        font-size: clamp(48px, 7vw, 64px);
+    }
+
+    .text> :nth-child(2) {
+        font-size: clamp(22px, 3vw, 24px);
+    }
+
+    .text> :nth-child(3) {
+        font-size: clamp(18px, 2.5vw, 20px);
+    }
+
+    .parent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    .input-design {
+        height: clamp(40px, 7vh, 65px);
+        width: clamp(300px, 47vw, 361px);
+        font-size: clamp(25px, 1.2vw, 18px);
+    }
+
+    .button-design {
+        height: clamp(40px, 7vh, 60px);
+        /* min 40px, scales, max 60px */
+        width: clamp(150px, 29vw, 220px);
+        /* min 120px, scales, max 220px */
+        font-size: clamp(20px, 1.2vw, 18px);
+    }
+}
+
+@media only screen and (min-width: 1020px) and (max-width: 1030px){
+    .text{
+        gap: 30px;
+    }
+   .text> :nth-child(1) {
+        font-size: clamp(48px, 7vw, 55px);
+        line-height: 6vw;
+    }
+       .text> :nth-child(2) {
+        font-size: clamp(22px, 3vw, 22px);
+    }
+
+    .text> :nth-child(3) {
+        font-size: clamp(18px, 2.5vw, 18px);
+    }
+}
+
+.separation {
+    height: 9px;
+    background-color: rgb(54, 4, 146);
+      box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7);
+}
+
+
+.section2{
+    width: 100%;
+    height: 100%;
+    margin: 44px auto;
+    position: relative;
+   
+}
+.shadowbox{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: black;
+    opacity: 0.69;
+}
+
+.section2 > :nth-child(2){
+    width: 83%;
+    margin: 0px auto;
+   font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+color: rgb(255, 255, 255);
+
+position: relative;
+}
+
+.grid{
+    width: 85%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 2px;
+     transition: transform 0.4s ease, box-shadow 0.4s ease;
+     position: relative;
+}
+.animation{
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.animation:hover{
+   transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(69, 68, 68, 0.15);
+}
+.section2 .grid img{
+  height: clamp(150px, 25vw, 250px);
+  width: clamp(90px, 15vw, 150px);
+    margin: 30px auto;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width:1200px) {
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+}
+
+.section2 > :nth-child(4){
+       width: 84.5%;
+    margin: 45px auto 20px;
+   font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.boxgrid{
+      width: 85%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 5px;
+    position: relative;
+}
+.boxgrid .box{
+ margin: 3px;
+    height: 291.4px;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    /* gap: 0px; */
+    background-color: #1d1932;
+    border-radius: 17px;
+    position: relative;
+}
+
+.boxinside {
+    color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: clamp(20px, 2vw, 22px); /* scales between 18px and 23px depending on screen width */
+    padding: clamp(15px, 2vw, 25px) clamp(10px, 2vw, 15px) clamp(10px, 2vw, 15px);
+}
+
+.boxinside2 {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: clamp(15px, 1.5vw, 16px); /* scales between 12px and 15px */
+    padding: 0 clamp(10px, 2vw, 15px);
+    /* text-align: center; */ /* you can uncomment if you want centered text */
+
+}
+
+.boxgrid .box img{
+    margin: 0px;
+    height: auto;
+    width: clamp(50px, 20%, 120px);
+         filter: drop-shadow(0 20px 40px rgba(255, 0, 0, 0.5));
+         position: absolute;
+         bottom: 10px;
+         right: 10px;
+}
+
+@media only screen and (min-width:955px) and (max-width:1200px){
+    .boxgrid{
+         grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media only screen and (max-width: 955px){
+    .boxgrid{
+        display: grid;
+         grid-template-rows: repeat(4,1fr);
+         grid-template-columns: 1fr;
+         width: 90%;
+    }
+
+    .boxgrid .box img{
+            width: clamp(50px, 10%, 120px)
+    }
+    .boxgrid .box{
+height: 24vh;
+    }
+}
+
+@media only screen and (min-width:700px) and (max-width:1000px){
+    .boxinside{
+         font-size: clamp(26px, 2vw, 22px);
+    }
+    .boxinside2{
+        font-size: clamp(22px, 1.5vw, 16px); 
+    }
+}
+
+
+@media only screen and (max-width: 400px){
+    .boxgrid .box {
+        height: 27vh;
+}
+}
+
+.section2 > :nth-child(6){
+       width: 84.5%;
+    margin: 60px auto 20px;
+   font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.question{
+    width: 85%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+grid-template-rows: repeat(6,1fr);
+grid-template-columns: 1fr;
+gap: 7px;
+}
+
+.questionpart:hover{
+        background-color: #414141;
+}
+
+.questionpart{
+    transition: all 0.4s ease-out;
+     height: clamp(60px, 12vh, 90px);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  font-size: clamp(15px, 2vw, 24px);
+    color: rgb(255, 255, 255);
+    background-color: #2d2d2d;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     padding: 0 clamp(12px, 3vw, 24px);
+    border: none;
+}
+
+.section2 > :nth-child(8){
+         width: 84.5%;
+    margin: 75px auto 20px;    /*60px shows top margin ,auto margin means left and right margin should be equal i.e  each should be (84.5%)/2 , 20px shows bottom margin*/
+   font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 24px;
+    font-size: 16px;
+color: rgb(255, 255, 255);
+    position: relative;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+}
+
+.input-design2 {
+    height: clamp(40px, 8vh, 70px);
+    /* min 40px, scales with screen, max 60px */
+    width: clamp(240px, 44vw, 580px);
+    /* min 240px, scales, max 500px */
+
+    padding: 0 16px;
+    /* inner spacing */
+    border-radius: 4px;
+    /* Netflix uses slightly rounded corners */
+    border: 1px solid rgba(128, 128, 128, 0.7);
+    background: #0f0f0f;
+    /* semi-transparent black */
+    color: white;
+
+    font-size: clamp(27px, 1.2vw, 18px);
+    /* scales text size */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+
+    outline: none;
+    /* remove default outline */
+    position: relative;
+}
+
+.button-design2 {
+    height: clamp(40px, 8vh, 70px);
+    /* min 40px, scales, max 60px */
+    width: clamp(120px, 20vw, 220px);
+    /* min 120px, scales, max 220px */
+
+    padding: 0 20px;
+    /* inner horizontal padding */
+    border-radius: 4px;
+    border: none;
+    background: #e50914;
+    /* Netflix red */
+    color: white;
+
+    font-size: clamp(20px, 1.2vw, 18px);
+    /* responsive font size */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+
+    display: inline-flex;
+    /* center text nicely */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+
+}
+
+.parent2 {
+   width: 97%;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   gap: 8px;
+}
+
+@media only screen and (max-width:650px){
+    .parent2{
+        width: 84.5%;
+        margin: auto;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .button-design2{
+         width: clamp(200px, 20vw, 220px);
+    }
+    .input-design2{
+         width: clamp(240px, 80vw, 580px);
+          font-size: clamp(22px, 1.2vw, 18px);
+    }
+}
+
+@media only screen and (min-width:650px) and (max-width:1050px)
+{
+     .button-design2{
+         width: clamp(200px, 20vw, 220px);
+    }
+    .input-design2{
+         width: clamp(240px, 65vw, 580px);
+          font-size: clamp(22px, 1.2vw, 18px);
+    }
+}
+
+.section2 > :nth-child(10){
+         width: 84.5%;
+    margin: 75px auto 40px;    /*60px shows top margin ,auto margin means left and right margin should be equal i.e  each should be (84.5%)/2 , 20px shows bottom margin*/
+   font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    /* text-align: center; */
+    text-decoration: underline;
+}
+
+.gridlast{
+     width: 84.5%;
+     margin: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+   column-gap: 10px;
+}
+.gridlast a{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  display: block;
+    font-size: 14px;
+    line-height: 21px;
+   color: rgba(255, 255, 255, 0.7); 
+   margin: 10px 0px;  /*top bottom margin 10px, left right margin 0px*/
+}
+
+@media only screen and (min-width:420px) and (max-width:800px){
+    .gridlast{
+         display: grid;
+    grid-template-columns: repeat(2,1fr);
+ row-gap: 35px;
+    }
+}
+@media only screen and (max-width:420px){
+     .gridlast{
+         display: grid;
+    grid-template-columns: 1fr;
+ row-gap: 25px;
+    }
+}
+
+button.b2 {
+    height: clamp(28px, 5vh, 33px);
+    /* min 28px, scale up to 6% of screen height, max 40px */
+    width: clamp(90px, 11vw, 140px);
+    /* min 90px, scales with viewport, max 140px */
+
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.7);
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(12px, 1vw, 16px);
+    /* min 12px, scales with viewport, max 16px */
+    font-weight: 500;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    /* space between text & icons */
+    position: relative;
+}
+
+.last{
+     width: 84.5%;
+     margin: 50px auto 40px;
+}
+
+.section2 > :nth-child(13){
+         width: 84.5%;
+    margin: 35px auto 40px;    /*60px shows top margin ,auto margin means left and right margin should be equal i.e  each should be (84.5%)/2 , 20px shows bottom margin*/
+   font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+color: rgba(255, 255, 255, 0.7);
+    position: relative;
+}
+.section2 > :nth-child(14){
+         width: 84.5%;
+    margin: 35px auto 40px;    /*60px shows top margin ,auto margin means left and right margin should be equal i.e  each should be (84.5%)/2 , 20px shows bottom margin*/
+   font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+color: rgba(255, 255, 255, 0.7);
+    position: relative;
+}
