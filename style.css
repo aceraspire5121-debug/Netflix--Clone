@@ -15,7 +15,7 @@ body {
     width: 100%;
     /*it takes 100 percentage width of the parent(here body is parent of it) so it takes 100 percent of body when laptop then also fully cover,when mobile then also fully cover since body becomes small in mobile but my main will take 100% of body*/
     height: 93vh;
-    background-image: url(assets/images/bg.jpg);
+    background-image: url(assets/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     /*Image will stretch/shrink to cover entire div while keeping its aspect ratio.*/
@@ -773,3 +773,4 @@ color: rgba(255, 255, 255, 0.7);
 color: rgba(255, 255, 255, 0.7);
     position: relative;
 }
+
