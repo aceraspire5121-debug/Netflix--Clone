@@ -2,7 +2,7 @@
 
 A responsive **Netflix-inspired web page** built using **HTML, CSS, and JavaScript**. This project showcases modern frontend skills including responsive layouts, dynamic form validation, and interactive UI elements.  
 
-Live Demo: [Netflix Clone](https://whimsical-crumble-4194d1.netlify.app)  
+Live Demo: [Netflix Clone](https://aceraspire5121-debug.github.io/Netflix--Clone/)  
 
 ---
 
